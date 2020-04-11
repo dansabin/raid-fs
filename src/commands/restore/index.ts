@@ -5,7 +5,9 @@ export const execute = () => {
     const outputDirs = ['output_dir_A', 'output_dir_B', 'output_dir_C']
 
     const promises = outputDirs.map((dir) => {
-        return fs.copy(dir, inputDir)
+        if (fs.existsSync(dir)) {
+            return fs.copy(dir, inputDir)
+        }
     })
 
     Promise.all(promises)

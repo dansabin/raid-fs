@@ -9,15 +9,15 @@ import { init, restore, exec } from './commands'
 clear();
 
 console.log(
-    chalk.red(figlet.textSync('Leroy - Raid File System', { horizontalLayout: 'full' }))
+    chalk.red(figlet.textSync('Leroy raids all the things!'))
 )
 
 program
     .version('1.0.0')
     .description("A RAID implementation running on NodeJS")
-    .option('-d, --daemon', 'Run as Daemon')
-    .option('-c, --cheese <type>', 'Add the specified type of cheese [marble]')
-    .option('-C, --no-cheese', 'You do not want any cheese')
+    .option('-d, --debug', "Leroy attempts to communicate his primary directive.")
+    .option('-c, --clear', "Leroy deliberately wipes the entire group.")
+    .option('-f, --file <path/to/config>', "Tell Leroy where the loot is, otherwise he won't look too hard and assume he knows best.")
 
 program
     .command('init')
@@ -32,18 +32,14 @@ program
         restore.execute()
     })
 program
-    .command('watch')
+    .command('watch', { isDefault: true })
     .description('stripes from current dir')
     .action(() => {
-        exec.execute()
+        exec.execute(program.clear, program.file)
     })
-
-
-// Default to help
-if (!process.argv.slice(2).length) {
-    program.outputHelp();
-}
 
 // Run
 program
     .parse(process.argv);
+
+if (program.debug) console.log(program.opts());

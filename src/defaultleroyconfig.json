@@ -1,0 +1,8 @@
+{
+  "inputDirPath": "input_dir",
+  "outputDirs": [
+    "output_dir_A",
+    "output_dir_B",
+    "output_dir_C"
+  ]
+}

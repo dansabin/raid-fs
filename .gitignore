@@ -1,7 +1,8 @@
+leroyconfig.json
 /lib
 /bin
 
-input_dir/
+input_dir*/
 output_dir_*/
 
 # Created by https://www.gitignore.io/api/osx,node,linux,windows,intellij,visualstudiocode

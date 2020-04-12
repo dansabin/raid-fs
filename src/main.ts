@@ -4,7 +4,7 @@ import chalk from 'chalk';
 import clear from 'clear';
 import figlet from 'figlet';
 import program from 'commander';
-import { init, restore, exec } from './commands'
+import {exec, init, restore} from './commands'
 
 clear();
 
@@ -32,7 +32,7 @@ program
         restore.execute()
     })
 program
-    .command('watch', { isDefault: true })
+    .command('watch', {isDefault: true})
     .description('stripes from current dir')
     .action(() => {
         exec.execute(program.clear, program.file)
@@ -41,5 +41,4 @@ program
 // Run
 program
     .parse(process.argv);
-
 if (program.debug) console.log(program.opts());

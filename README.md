@@ -10,6 +10,7 @@ The goal would be to use a performant disk for the main writes, while backing up
 `npm start` by default will watch for changes in `input_dir` and write them to three `output_dir_x`s.
   - writes update the data in the output directory
   - deletes remove the data in the output directory
+  - moving a file constitutes a delete plus an update and is handled appropriately. 
 
 `npm start --restore` will load data from the output directories and assemble it into the input directory.
 

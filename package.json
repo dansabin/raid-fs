@@ -12,14 +12,11 @@
   "private": false,
   "scripts": {
     "local": "yarn run build && yarn start",
-    "local:live": "yarn run build && yarn start:live",
     "start": "ts-node src/main.ts --",
-    "start:live": "nodemon --watch 'src/**/*.ts' --ignore *_dir --exec 'ts-node' src/main.ts --",
     "create": "npm run build && npm run test",
     "build": "tsc -p .",
     "test": "echo 'no tests'",
-    "run:local": "npm i -g && leroy",
-    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
+    "run:local": "npm i -g && leroy"
   },
   "dependencies": {
     "@types/clear": "^0.1.0",

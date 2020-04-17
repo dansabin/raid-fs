@@ -41,4 +41,5 @@ program
 // Run
 program
     .parse(process.argv);
+
 if (program.debug) console.log(program.opts());

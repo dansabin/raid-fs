@@ -32,7 +32,7 @@
     "fs-extra": "^9.0.0",
     "hash-mod": "^0.0.5",
     "inquirer": "^7.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "node-watch": "^0.6.3",
     "nodemon": "^2.0.3",
     "path": "^0.12.7",
